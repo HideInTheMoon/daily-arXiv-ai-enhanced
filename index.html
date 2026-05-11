@@ -243,5 +243,10 @@
     </button>
 
     <script src="js/app.js?v=1.0.1"></script>
+    <script>
+        document.querySelectorAll('a[href*="dw-dengwei/daily-arXiv-ai-enhanced"]').forEach(function(el) {
+            el.href = 'https://github.com/' + DATA_CONFIG.repoOwner + '/' + DATA_CONFIG.repoName;
+        });
+    </script>
 </body>
 </html> 
