@@ -12,19 +12,19 @@ const DATA_CONFIG = {
      * GitHub repository owner (username)
      * This will be replaced during GitHub Actions workflow execution
      */
-    repoOwner: 'PLACEHOLDER_REPO_OWNER',
+    repoOwner: '"'"'HideInTheMoon'"'"',
 
     /**
      * GitHub repository name
      * This will be replaced during GitHub Actions workflow execution
      */
-    repoName: 'PLACEHOLDER_REPO_NAME',
+    repoName: '"'"'daily-arXiv-ai-enhanced'"'"',
 
     /**
      * Data branch name
-     * Default: 'data'
+     * Default: '"'"'data'"'"'
      */
-    dataBranch: 'data',
+    dataBranch: '"'"'data'"'"',
 
     /**
      * Get the base URL for raw GitHub content from data branch
@@ -36,11 +36,10 @@ const DATA_CONFIG = {
 
     /**
      * Get the full URL for a data file
-     * @param {string} filePath - Relative path to the data file (e.g., 'data/2025-01-01.jsonl')
+     * @param {string} filePath - Relative path to the data file (e.g., '"'"'data/2025-01-01.jsonl'"'"')
      * @returns {string} Full URL to the data file
      */
     getDataUrl: function(filePath) {
         return `${this.getDataBaseUrl()}/${filePath}`;
     }
 };
-
