@@ -335,7 +335,12 @@ jobs:
         # 确保目录存在 / Ensure directories exist
         mkdir -p data assets
         cp -r /tmp/data_files/data/* data/ 2>/dev/null || true
-        cp /tmp/data_files/assets/file-list.txt assets/ 2>/dev/null || true
+        
+        # 从 data 分支的完整文件列表重新生成 file-list.txt
+        # （不能直接用 temp 里的，因为它只包含今日文件）
+        # Regenerate file-list.txt from the full data branch directory
+        ls data/*.jsonl | sed 's|data/||' > assets/file-list.txt
+        echo "文件列表已重新生成 / File list regenerated"
         
         # 只添加数据文件 / Only add data files
         git add data/* 2>/dev/null || true
